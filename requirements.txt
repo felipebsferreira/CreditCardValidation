@@ -2,7 +2,6 @@ beautifulsoup4==4.6.0
 Chameleon==3.1
 colander==1.4
 coverage==4.4.1
--e git+https://git.heroku.com/cryptic-dusk-81242.git@068e3680f6c816e4364fc99fd75d389a1ed3e19d#egg=credit_card
 deform==2.0.4
 hupper==1.0
 iso8601==0.1.12
