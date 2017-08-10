@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AchorLoans: ${view.view_name} - ${page_title}</title>
+  <link rel="stylesheet"
+        href="${request.static_url('credit_card:static/app.css') }"/>
+</head>
+<div class="container">  
+  <form id="validation" action="${request.current_route_url()}" method="post">
+    <h3>Credit card validation</h3>
+    <br>
+    <fieldset>      
+      <input type="file" name="fileupload" id="fileupload" required>
+    </fieldset>
+    <fieldset>
+      <textarea id="txtList" name="txtList" placeholder="List of loaded credit card numbers...."></textarea>
+    </fieldset>
+    <fieldset>
+      <button type="submit" id="validate" name="validate">Validate</button>
+    </fieldset>
+    <fieldset>
+      <textarea id="txtResult" name="txtResult" placeholder="Waiting file....">${view.validation_result}</textarea>
+    </fieldset>
+  </form>
+</div>
+</html>
+
+<script language="javascript" type="text/javascript">
+  function handleFileSelect(evt) 
+  {
+    var files = evt.target.files;
+    var reader = new FileReader();
+
+    reader.onload = (function(theFile)
+    {
+      return function(e) 
+      {
+        document.getElementById('txtList').innerHTML = e.target.result;
+      };
+    })(files[0]);
+
+    reader.readAsBinaryString(files[0]);
+  }
+
+  document.getElementById('fileupload').addEventListener('change', handleFileSelect, false);
+</script>
+
