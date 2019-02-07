@@ -1,6 +1,6 @@
 beautifulsoup4==4.6.0
 Chameleon==3.1
-colander==1.4
+colander==1.7.0
 coverage==4.4.1
 deform==2.0.4
 hupper==1.0
